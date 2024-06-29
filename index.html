@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>zzio</title>
+    <style>
+      body {
+        background-color: blanchedalmond;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        background-color: blanchedalmond; /* 컨테이너 배경색 */
+      }
+      .head {
+        position: relative;
+        top: 80px; /* 위치 조정 */
+        margin: 50px auto;
+        width: 430px;
+        height: 370px;
+        border: 5px solid black;
+        border-radius: 50%;
+        background-color: white;
+      }
+      .eyeright,
+      .eyeleft {
+        position: absolute;
+        top: 30%;
+        width: 10px;
+        height: 10px;
+        border: 3px solid black;
+        border-radius: 50%;
+        background-color: black;
+        animation: eyeMove 5s infinite alternate;
+      }
+      @keyframes eyeMove {
+        0%,
+        100% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(15px);
+        }
+      }
+      .eyeright {
+        right: 25%;
+      }
+      .eyeleft {
+        left: 25%;
+      }
+      .mouth {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 50px;
+        border: 3px solid black;
+        border-radius: 50%;
+        background-color: yellow;
+      }
+      .boori {
+        position: absolute;
+        top: 210px;
+        left: 45%;
+        transform: translateX(-50%);
+        width: 90px;
+        height: 3px;
+        border: 1px solid black;
+        background-color: black;
+        border-radius: 100%;
+      }
+      .memobox {
+        text-align: center;
+        margin-top: 50px;
+        position: relative;
+        height: 50px;
+        overflow: hidden;
+      }
+      .memo {
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        animation: fadeInOut 10s infinite;
+      }
+      @keyframes fadeInOut {
+        0%,
+        20% {
+          opacity: 1;
+        }
+        30%,
+        100% {
+          opacity: 0;
+        }
+      }
+      .memo:nth-child(2) {
+        animation-delay: 4s;
+      }
+      .cheek {
+        position: absolute;
+        top: 50%;
+        width: 30px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: pink;
+        animation: cheekPulse 2s infinite;
+      }
+      .cheekleft {
+        left: 20%;
+      }
+      .cheekright {
+        right: 20%;
+      }
+      @keyframes cheekPulse {
+        0%, 100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="memobox">
+        <div class="memo">세상에서 가장 귀한 금은?</div>
+        <div class="memo">여러분과 함께 하는 '지금'</div>
+      </div>
+      <div class="head">
+        <div class="eyeright"></div>
+        <div class="eyeleft"></div>
+        <div class="mouth"></div>
+        <div class="boori"></div>
+        <div class="cheek cheekleft"></div>
+        <div class="cheek cheekright"></div>
+      </div>
+    </div>
+  </body>
+</html>
